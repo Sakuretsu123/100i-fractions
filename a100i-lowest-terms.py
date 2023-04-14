@@ -5,7 +5,29 @@
 # return a tuple of 2 integers (numerator, denominator) for 
 # the fraction in lowest terms
 
+from typing import final
+
+
 def lowestTerms(numerator,denominator):
+    myList = [numerator, denominator]
+    multiplicators = []
+    final= []
+    x = max(myList)
+    for i in range(1, x): 
+        num = numerator%i
+        den = denominator%i
+        if num == 0 and den == 0: 
+            multiplicators.append(i)
+    
+    n = max(multiplicators)
+    num = num//n 
+    den = den//n 
+    final.append(num)
+    final.append(den)
+
+    return final
+        
+    
 
 
 
